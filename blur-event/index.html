@@ -1,0 +1,36 @@
+<html style="font-size: 20.6px;">
+	<head>
+		<meta charset="UTF-8">
+		<title data-lang="myPageTitle">Blur测试</title>
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
+	</head>
+	<body class="page-my" id="pageMy">
+		<div id="mainWrap">
+      <span id="uaContainer"></span>
+      <input id="textInput" style="width: 400px; height: 100px;" type="text" placeholder="text input">
+      <ul id="infoPanel"></ul>
+    </div>
+    
+    <script>
+      var uaContainer = document.getElementById("uaContainer");
+      uaContainer.innerHTML = navigator.userAgent;
+      
+      var element = document.getElementById("textInput");
+      var infoPanel = document.getElementById("infoPanel");
+      function addInfo(content) {
+        var li = document.createElement("li");
+        li.innerHTML = content;
+        infoPanel.appendChild(li);
+      }
+      element.addEventListener("focus", function(event) {
+         console.log("focus!");
+         addInfo('Focus!');
+      });
+      element.addEventListener("blur", function(event) {
+         console.log("blur!");
+         addInfo('Blur!');
+      });
+    </script>
+	</body>
+</html>

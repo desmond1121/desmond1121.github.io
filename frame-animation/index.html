@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="email=no" />
+  <title>帧动画</title>
+  <script src="https://as.alipayobjects.com/g/component/antbridge/1.1.4/antbridge.min.js"></script>
+  
+  
+  <script>
+  window._to = {
+  
+  
+  };
+  window.SCHEMAS_COMMON = {"forceAlipay":false,"hideOptionMenu":true,"stopSwitch":false,"stopMessage":"活动已结束，谢谢关注！","rdsSwitch":false,"spmDebugSwitch":false,"spmExpoSwitch":false,"transparentTitle":"none","enableWK":false};
+  </script>
+  
+  
+  
+  
+<script>!(function(e,t){var i=e||100;var a=t||750;var r=window;var n=r.document;var d=navigator.userAgent;var v=d.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i);var l=d.match(/U3\/((\d+|\.){5,})/i);var o=l&&parseInt(l[1].split(".").join(""),10)>=80;var s=navigator.appVersion.match(/(iphone|ipad|ipod)/gi);var m=r.devicePixelRatio||1;var p=n.documentElement;var c=1;var h=1/m;if(s){}else if(v&&v[1]>534||o){p.style.fontSize=i+"px";var u=n.createElement("div");u.setAttribute("style","width: 1rem;display:none");p.appendChild(u);var f=r.getComputedStyle(u).width;p.removeChild(u);if(f!==p.style.fontSize){var w=parseInt(f,10);c=i/w;h=h*c}}else{h=1}var y=n.querySelector('meta[name="viewport"]');if(!y){y=n.createElement("meta");y.setAttribute("name","viewport");n.head.appendChild(y)}y.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+h+",maximum-scale="+h+",minimum-scale="+h);var A=function S(){p.style.fontSize=i/a*p.clientWidth*c+"px"};A();r.addEventListener("resize",A)})();</script>
+
+
+    <meta name="Alipay:title" content="帧动画" />
+    <meta name="Alipay:imgUrl" content="https://t.alipayobjects.com/images/rmsweb/T1mQxhXbRXXXXXXXXX.png" />
+    <meta name="Alipay:desc" content="" />
+    
+    <meta name="fengdie:pkg" content="hb-promo-boilerplate@3.1.0" />
+    <meta name="fengdie:aid" content="25596" />
+    <meta name="fengdie:pid" content="43843" />
+    
+  <link rel="stylesheet" href="assets/60cc2a31934946523a60b44b84312871.css" /><link rel="stylesheet" href="assets/60cc2a31934946523a60b44b84312871.css" /><link rel="stylesheet" href="assets/1a093e71bec17f236da1d12590eab7a3.css" /></head>
+
+<body>
+  
+
+<div class="fengdie-components"><div id="ant-render-id-_component_sprite" data-ant-render-component="components/sprite">
+
+<script type="text/json">{"bgImage":"https://gw.alipayobjects.com/zos/rmsportal/eemPAcHXKRTwtiIHpAcO.png","smallWidth":10,"disableLazy":true,"left":105,"top":30,"width":540,"height":520,"frames":42,"duration":40,"order":"[1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42,42]","direction":"horizontal","src":"https://gw.alipayobjects.com/zos/rmsportal/ljkAqtJJhGjBrwBJzJth.png"}</script>
+<div class="sprite-box">
+  
+    <img src="https://gw.alipayobjects.com/zos/rmsportal/eemPAcHXKRTwtiIHpAcO.png" alt="" />
+  
+  <div class="sprite"></div>
+</div>
+
+
+</div></div>
+
+
+<script src=https://a.alipayobjects.com/g/animajs/mtracker/3.1.0/seed.js></script><script src=https://a.alipayobjects.com/g/component/tracert/1.0.7/index.js></script>
+<style>
+.wrap-1509960392386 {
+  display: none;
+}
+.pop-1509960392386 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.93);
+  z-index: 10000000;
+}
+
+.content-1509960392386 {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  z-index: 10000001;
+}
+
+.bg-1509960392386 {
+  background: url(https://zos.alipayobjects.com/rmsportal/EvQegvwYYBahfVuWyvqX.png) no-repeat;
+  width: 70%;
+  height: 0;
+  padding-bottom: 90%;
+  background-size: contain;
+  margin: 0 auto;
+}
+</style>
+
+<script src="assets/661d71044c96d8847fc6cb48fdb32cd7.js"></script>
+<script src="assets/adb15e4dc035a3e9e82c4d0669d3240e.js"></script>
+<script src="assets/f285d9a1b100a8fcc6100222083c88be.js"></script>
+<script>
+      (function() {
+        var data = [{"id":"ant-render-id-_component_sprite","fn":"_component_sprite"}];
+        for(var i = 0; i < data.length; i++) {
+          var item = data[i];
+          if(typeof window[item.fn] === "function") {
+            window[item.fn](item.id);
+          }
+        }
+      })();
+    </script></body>
+</html>

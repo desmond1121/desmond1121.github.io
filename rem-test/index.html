@@ -1,0 +1,34 @@
+<html style="font-size: 20.6px;">
+	<head>
+		<meta charset="UTF-8">
+		<title data-lang="myPageTitle">爱心捐赠</title>
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
+		<script>
+		    var a = document.documentElement["clientWidth"];
+		    window.onload = function() {
+			   document.getElementById("test4").innerHTML = document.documentElement["clientWidth"];
+		    	document.getElementById("test1").innerHTML = a;
+		    	document.getElementById("test2").innerHTML = b;
+			}
+			document.addEventListener("DOMContentLoaded", function(event) {
+		    	document.getElementById("test3").innerHTML = document.documentElement["clientWidth"];
+			});
+		</script>
+	</head>
+	<body class="page-my" id="pageMy">
+		<script>
+			   var b = document.documentElement["clientWidth"];
+		</script>
+		<div id="mainWrap">
+		    <span>script: </span>
+		    <div id="test1"></div>
+		    <span>body script: </span>
+		    <div id="test2"></div>
+		    <span>DOMContentLoaded: </span>
+		    <div id="test3"></div>
+		    <span>window onload: </span>
+		    <div id="test4"></div>
+		</div>
+	</body>
+</html>

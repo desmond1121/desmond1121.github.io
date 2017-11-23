@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		#image {
+			width: 400px;
+			height: 250px;
+			outline: 1px solid black;
+			outline-offset: -4px;
+			background-size: 2900% 100%;
+			background-color: #f3f3f3;
+			background-image: url('http://gw.alicdn.com/mt/TB1jm5wOXXXXXbvXpXXXXXXXXXX-23200-600.png');
+		}
+
+		#image-abs {
+			width: 400px;
+			height: 250px;
+			outline: 1px solid black;
+			outline-offset: -4px;
+			background-size: 2900% 100%;
+			background-color: #f3f3f3;
+			background-image: url('http://gw.alicdn.com/mt/TB1jm5wOXXXXXbvXpXXXXXXXXXX-23200-600.png');
+		}
+	</style>
+</head>
+
+<body>
+	<div id="meta"></div>
+	<div id="image"></div>
+	<div id="image-abs"></div>
+
+	<script>
+		var metaObject = document.getElementById('meta');
+		metaObject.innerHTML = 'window: ' + window.innerWidth + ', ' + window.innerHeight + ', document: ' + document.documentElement.clientWidth + ', ' + document.documentElement.clientHeight;
+		var element = document.getElementById('image'); 
+		var elementAbs = document.getElementById('image-abs'); 
+		var position = 0;
+		var interval = 500;
+		var intervalHandle;
+
+		function refreshHandle() {
+			if (intervalHandle) {
+				clearInterval(intervalHandle);
+			}
+			intervalHandle = setInterval(function() {
+				console.log('Set background-position:' + position + '% 0');
+				position = (position + 10) % 200;
+				element.setAttribute("style", "background-position: -" + position + "% 0");
+				elementAbs.setAttribute("style", "background-position: " + position + "px 0");
+			}, interval);
+		}
+		refreshHandle();
+
+	</script>
+</body>
+
+</html>

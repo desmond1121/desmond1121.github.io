@@ -1,0 +1,116 @@
+<!doctype html>
+<!--
+Copyright 2017 Google Inc. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Sample illustrating the use of Basic Service Worker.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Basic Service Worker Sample</title>
+</head>
+
+<body>
+  <div>
+    <h1 id="counter">5</h1>
+  </div>
+  <div id="main-container">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => navigator.serviceWorker.ready);
+      }
+      var intervalHandle;
+      var counterElement = document.getElementById('counter');
+      var counter = 4;
+      intervalHandle = setInterval(() => {
+        counterElement.innerHTML = counter;
+        counter--;
+        if (counter < 0) {
+          clearInterval(intervalHandle);
+          loadImage();
+          return;
+        }
+      }, 1000);
+
+      var imgList = [
+        "./images/Naruto.jpeg",
+        "./images/NarutoCute.jpg",
+        "./images/yixi.jpg",
+        "./images/zhexi.jpg",
+        "https://zos.alipayobjects.com/rmsportal/vNwoyBwdQpAVXKy.png",
+        "https://zos.alipayobjects.com/rmsportal/mZkGlrKxoAGpcIjYPNsl.jpg",
+        "https://zos.alipayobjects.com/rmsportal/DDZgmusuvRmkUlp.svg",
+        "https://zos.alipayobjects.com/cmsmng/cms/images/j0dzxx8e/029babde-d9cf-46d4-9cbc-55564a4d629c.png@90w_1l",
+        "https://zos.alipayobjects.com/cmsmng/cms/images/j2gxaz7v/ec6918b6-5279-4c61-bba2-c715751c42e1.jpeg",
+        "https://zos.alipayobjects.com/mwalletmngappcenter/10000009/1_0_0/1481601172119_icon_S.png",
+        "https://zos.alipayobjects.com/rmsportal/eUUlzJfnuWMjZjbnRdjvJmDAjUKpEbma.png",
+        "https://zos.alipayobjects.com/cmsmng/cms/images/iqm1hwpj/13866aaf-4307-4dfb-bee7-34a3bb40ad98.png",
+        "https://zos.alipayobjects.com/rmsportal/HMMAJtmTqqNafmhGBFvv.jpeg",
+        "https://zos.alipayobjects.com/rmsportal/TsQnhRjzZTtQKtUzGUZO.gif",
+        "https://zos.alipayobjects.com/rmsportal/PhGmRNThLSlnlpd.jpg",
+        "https://zos.alipayobjects.com/cdp/qQSruQpZuCzCSfq.png",
+        "https://zos.alipayobjects.com/cdp/HijILwmydXHKgCGPPpAT.jpg",
+        "https://zos.alipayobjects.com/cdp/zBfCiwJwpFbpAveGyjyk.jpg",
+        "https://zos.alipayobjects.com/cmsmng/cms/images/iqm1ee4w/57d42712-7e22-40ca-8f17-25d5f13798af.png",
+        "https://zos.alipayobjects.com/rmsportal/EOQGJBYinctGansUWGMO.png",
+        "https://zos.alipayobjects.com/cdp/zUoryuIEZtBvnJj.jpg",
+        "https://zos.alipayobjects.com/cmsmng/cms/images/j2ptamq1/b271b5b5-c5d8-4181-b2ae-caa439d29010.png",
+        "https://zos.alipayobjects.com/cmsmng/cms/images/j1lr53eu/b91c9f21-bfca-45c8-8630-ad2607edf398.png",
+        "https://zos.alipayobjects.com/rmsportal/bdARXeoujvBzOGnQzTak.png",
+        "https://zos.alipayobjects.com/mwalletmngappcenter/60000071/1_0_0_42/1482303939838_icon_S.png",
+        "https://zos.alipayobjects.com/rmsportal/yIncIccgpKEuxHaxhsrW.png",
+        "https://zos.alipayobjects.com/cmsmng/cms/images/izi7qo89/8635ae93-8f04-4194-8080-5264b97dbfb6.png",
+        "https://zos.alipayobjects.com/mwalletmngappcenter/marketStage/IOS/88886666_1470313362702_icon_L.png",
+        "https://zos.alipayobjects.com/rmsportal/EDfhHQFrHzfOBQBYcDsH.png",
+        "https://zos.alipayobjects.com/cmsmng/cms/images/izqs6fnf/cbfd385f-9fac-489d-ad9d-f1fb683270d6.png",
+        "https://zos.alipayobjects.com/rmsportal/NniJdeuPjZNCiSwZKgce.jpg",
+        "https://zos.alipayobjects.com/rmsportal/jcZhdehADvSubFKMQsSv.jpg",
+        "https://zos.alipayobjects.com/mwalletmngappcenter/20000160/1_0_0/1488202473355_icon_S.png",
+        "https://zos.alipayobjects.com/mwalletmngappcenter/h5/0/10000009/7_0_0_7/cca886c30ff33ff90c73d9b407b4fd5f.png",
+        "https://zos.alipayobjects.com/cmsmng/cms/images/j2o8vf0i/091fd823-8415-4c76-9326-2c144362b113.jpeg",
+        "https://zos.alipayobjects.com/imatchfacade/fMWThalmOIpIrojDMwUq.gif",
+        "https://zos.alipayobjects.com/cdp/AbpCporftSnaFdhSzsMh.png",
+        "https://zos.alipayobjects.com/rmsportal/NMDDGOcxUlGlOKgISjFl.png",
+        "https://zos.alipayobjects.com/rmsportal/pNypWVbCmDYxhDIINOVS.png",
+        "https://zos.alipayobjects.com/mwalletmngappcenter/h5/1/20000869/3_0_1_2/www/index.htm",
+        "https://zos.alipayobjects.com/rmsportal/bbscktwTubWlXcfrjIJm.png",
+        "https://zos.alipayobjects.com/rmsportal/YmtnfIkIeoWicaw.png",
+        "https://zos.alipayobjects.com/rmsportal/oDRKYCETdretazx.jpg",
+        "https://zos.alipayobjects.com/rmsportal/liGLftVbYBXBUtC.png",
+        "https://zos.alipayobjects.com/rmsportal/jSZWBEBdDIWfBUsIHPbK.png",
+        "https://zos.alipayobjects.com/mwalletmngappcenter/20000691/1_0_0/1480389264915_icon_S.png",
+        "https://zos.alipayobjects.com/rmsportal/nCPyjqYTgmPUKDDKlDCB.jpg"
+      ];
+
+      function loadImage() {
+        console.log('create images!');
+
+        var root = document.getElementById("main-container");
+        for (var i = 0; i < imgList.length; i++) {
+          var img = document.createElement("img");
+          img.width = 50;
+          img.height = 50;
+          img.src = imgList[i];
+          root.appendChild(img);
+        }
+      }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
+    <title>测试input</title>
+    <style media="screen">
+      .numberInputWrapper {
+
+      }
+
+      .inputWrapper {
+        position: relative;
+        margin-left: -0.05rem;
+      }
+
+      .cashTip {
+        font-size: 0.32rem;
+        display: block;
+        padding-bottom: 0.03rem;
+        min-width: 0.35rem;
+        float: left;
+        padding-top: 0.125rem;
+      }
+
+      .amountInputWrapper {
+        overflow: hidden;
+      }
+
+      .amountInput {
+        font-size: 0.55rem;
+        outline: none;
+        border: none;
+        background: #eee;
+        width: 100%;
+      }
+
+      .telInput {
+        font-size: 0.55rem;
+        outline: none;
+        border: none;
+        background: #eee;
+      }
+
+      .payAmoutContent {
+        background-color: transparent;
+        font-size: 0.15rem;
+        padding-top: 0.28rem;
+        padding-bottom: 0.02rem;
+        position: relative;
+      }
+
+      .payAmoutContent:after {
+        content: '';
+        background-color: #ccc;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        transform: scale(1, 0.25);
+      }
+
+      .emptyInput {
+        font-size: 0.25rem;
+        /*outline: none;*/
+        border: 1px solid gray;
+        width: 100%;
+      }
+
+    </style>
+    <script>
+      // 设置根节点 font-size
+      var docEl = document.documentElement;
+      docEl.style.fontSize = 100 / 375 * docEl.clientWidth  + 'px';
+      window.addEventListener('resize', function() {
+        docEl.style.fontSize = 100 / 375 * docEl.clientWidth + 'px';
+      });
+    </script>
+    <script type="text/javascript">
+      function onNumberFocus () {
+        console.info('on-test-input-number-focused ');
+      }
+
+      function onTelFocus () {
+        console.info('on-test-input-tel-focused ');
+      }
+    </script>
+  </head>
+  <body class="bodyWrapper">
+    <div class="payAmoutContent">
+      <div class="inputWrapper">
+        <span class="cashTip" >金额</span>
+        <div class="amountInputWrapper form">
+          <input
+            type="number"
+            class="amountInput"
+            data-paste="false"
+            onFocus="onNumberFocus()"
+            data-placeholder=""
+            placeholder=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="payAmoutContent">
+      <div class="inputWrapper">
+        <span class="cashTip" >手机号</span>
+        <div class="amountInputWrapper form">
+          <input
+            type="number"
+            class="telInput"
+            data-paste="false"
+            data-placeholder=""
+            placeholder=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="emptyWrapper">
+      <input type="number" class="emptyInput" placeholder="金额"/>
+    </div>
+
+    <div class="emptyWrapper">
+      <input type="tel" class="emptyInput" placeholder="手机号"/>
+    </div>
+  </body>
+</html>
