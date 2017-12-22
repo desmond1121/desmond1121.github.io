@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>android-camera</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    img{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<p class="activeId"></p>
+<canvas id="gl-cvs"></canvas>
+<p class="fps"></p>
+<p class="format"></p>
+<p>分辨率：<span class="resolution"></span></p>
+<p>
+  选择相机
+  <label>
+    <input name="camera-facing" type="radio" value="0" checked>
+    后置摄像头
+  </label>
+  <label>
+    <input type="radio" name="camera-facing" value="1">
+    前置摄像头
+  </label>
+</p>
+<p>
+  相机质量
+  <label>
+    <select class="quality">
+      <option value="4">High</option>
+      <option value="3" selected>Default</option>
+      <option value="2">Medium</option>
+      <option value="1" >Low</option>
+    </select>
+  </label>
+</p>
+<p>
+  <button class="restart-camera">重启相机</button>
+</p>
+<p>
+  选择Marker
+  <input type="checkbox" value="g58-NDgISfqlIeOMGlwn6QAAACMAAQED">网商银行
+  <input type="checkbox" value="BxvTHeP_TlWmDNn_oT5PRwAAACMAAQED">工牌背面
+  <input type="checkbox" value="NXgkXYZCRyOJsbsMhWpnqwAAACMAAQED">灌篮高手
+  <input type="checkbox" value="lU455SHKSv66CqHeZO5x9gAAACMAAQED">星空
+  <input type="checkbox" value="abcd">错误abcd
+  <br>
+  <button class="reload-markers">重新加载Marker</button>
+  <button class="start-analysis">切换扫描</button>
+</p>
+<p>
+  特殊测试：
+  <button class="sp0">分析时重载</button>
+  <button class="sp1">错误的Marker</button>
+  <button class="sp2">push window</button>
+</p>
+<p class="info-analysis"></p>
+<p class="info-detector"></p>
+<p>
+
+</p>
+<div class="log"></div>
+<script src="js/android-camera-2.js"></script>
+</body>
+</html>
